@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    h1=title
+    ul.errors
+        if errors
+            each error, i in errors
+               li.alert.alert-danger #{error.msg}
+    form(method='post', action='/posts/add', enctype='multipart/form-data')
+        .form-group
+            label Title:
+            input.form-control(name='title',type='text')
+        .form-group
+            label Category:
+            select.form-contol(name='category')
+               each category, i in categories
+                   option(value='#{category.name}') #{category.name}
+        .form-group
+            label Body:
+            textarea.form-control(name='body',id='body')
+        .form-group
+            label Main Image:
+            input.form-control(name='mainimage',type='file')
+        .form-group
+            label Author:
+            select.from-control(name='author')
+                option(value='Anonymous') Anonymous
+                option(value='Unknown') Unknown
+                option(value='Freeman') FreeMan
+                option(value='Freewoman') FreeWoman
+                option(value='Peace') Peace
+                option(value='Robot') Robot
+                option(value='Artificial Intelligence') Artificial Intelligence
+                option(value='Society') Society
+        input(name='submit', type='submit',value='Post')
+        script(src='//cdn.ckeditor.com/4.7.2/standard/ckeditor.js')
+        script(src='/ckeditor/chkeditor.js')
+        script
+            | CKEDITOR.replace('body');
+
+    hr

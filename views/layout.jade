@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+   .container
+     .contimg
+       .logo
+         img.logo(src='/images/dark-shadows.jpg')
+       .middle
+          .text Anonymous Blog Go for it >>
+     nav
+      ul
+       li
+        a(href='/') Home
+       li
+        a(href='/posts/add') Add Post
+       li
+        a(href='/categories/add') Add Category
+       li
+        a(href='/about') About Us
+       li
+        a(href='/contact') Contact Us
+     != messages()
+     block content
+     footer
+      p Anonymous Blog &copy; 2017

@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css')
+    link(rel='stylesheet', href='css/style.css')
+
+  body
+   .container
+     img.logo(src='/images/dark-shadows.jpg')
+     nav
+      ul
+       li
+        a(href='/') Home
+       li
+        a(href='/posts/add') Add Post
+       li
+        a(href='/categories/add') Add Category
+       li
+        a(href='/about') About Us
+       li
+        a(href='/contact') Contact me
+    .container
+     header
+     h1 Send us a suggestion!
+     .name
+       input.first(placeholder='First Name', type='text')
+       input.last(placeholder='Last Name', type='text')
+     .contact
+       input.email(placeholder='E-mail Address', type='text')
+     .message
+       textarea(placeholder='Your Suggestions Here!')
+    footer
+     button Send Suggestion
